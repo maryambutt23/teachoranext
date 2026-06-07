@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import styles from "./AdminLogin.module.css";
 
 export default function Page() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +18,6 @@ export default function Page() {
       return;
     }
 
-    // SIMPLE FIX (no AuthContext → no build crash)
     if (email === "admin@teachora.com" && password === "1234") {
       if (typeof window !== "undefined") {
         localStorage.setItem(
@@ -28,8 +26,12 @@ export default function Page() {
         );
       }
 
-      const redirectTo = searchParams.get("from") || "/admin";
-      router.replace(redirectTo);
+      const from =
+        typeof window !== "undefined"
+          ? new URLSearchParams(window.location.search).get("from")
+          : null;
+
+      router.replace(from || "/admin");
     } else {
       alert("Invalid credentials");
     }
