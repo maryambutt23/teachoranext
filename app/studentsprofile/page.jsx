@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { setStudentProfile } from "../utils/Studentprofile";
+import { setStudentProfile } from "../utils/StudentProfile";
 import styles from "./Studentsprofile.module.css";
 
 export default function StudentProfile() {
