@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { setStudentProfile } from "../utils/StudentProfile";
-import styles from "./StudentsProfile.module.css";
+import { setStudentProfile } from "../utils/Studentprofile";
+import styles from "./Studentsprofile.module.css";
 
 export default function StudentProfile() {
   const [form, setForm] = useState({
