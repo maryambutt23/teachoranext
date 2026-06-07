@@ -1,0 +1,50 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 25px;
+
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+
+  margin-bottom: 20px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+}
+
+/* TITLE */
+.navbar h1 {
+  color: white;
+  font-size: 44px;
+  font-weight: 1600;
+  letter-spacing: 0.5px;
+}
+
+/* RIGHT SIDE */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* OPTIONAL TEXT STYLE */
+.navbar-right span {
+  color: #cbd5e1;
+  font-size: 14px;
+}

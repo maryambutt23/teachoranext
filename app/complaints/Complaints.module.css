@@ -1,0 +1,163 @@
+.complaintsPage {
+  padding: 30px;
+  min-height: 100vh;
+  background: transparent;
+  color: #f1f5f9;
+}
+
+/* TITLE */
+.complaintsPage h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+/* OPTIONAL SUBTITLE */
+.complaintsPage h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+/* FORM */
+.complaintsPage form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 500px;
+  margin-bottom: 30px;
+
+  padding: 20px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* INPUTS */
+.complaintsPage input,
+.complaintsPage select,
+.complaintsPage textarea {
+  padding: 12px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: #f1f5f9;
+  outline: none;
+}
+
+.complaintsPage textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* OPTIONS FIX */
+.complaintsPage select option {
+  background: #111827;
+  color: white;
+}
+
+/* BUTTON */
+.complaintsPage button {
+  padding: 12px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* GRID LIST */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+/* CARD */
+.card {
+  padding: 15px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #6366f1;
+}
+
+/* ROLE BASE */
+.roleTag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* ROLE COLORS */
+.roleStudent {
+  background: #2563eb;
+}
+
+.roleTeacher {
+  background: #7c3aed;
+}
+
+/* DATE */
+.date {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* ADMIN TAGS */
+.tags {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* STATUS */
+.pending {
+  color: #facc15;
+  font-size: 12px;
+}
+
+.resolved {
+  color: #22c55e;
+  font-size: 12px;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.deleteBtn {
+  background: #ef4444;
+}
+
+.deleteBtn:hover {
+  background: #dc2626;
+}

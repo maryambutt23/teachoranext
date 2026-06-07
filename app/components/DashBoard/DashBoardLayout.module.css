@@ -1,0 +1,92 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  background: #f1f5f9;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+
+  background: #0f172a;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/* LOGO */
+.logo {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* LINKS */
+.sidebar a {
+  color: #cbd5e1;
+  text-decoration: none;
+
+  padding: 12px;
+  border-radius: 10px;
+
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+/* HOVER */
+.sidebar a:hover {
+  background: #1e293b;
+  color: white;
+  transform: translateX(4px);
+}
+
+/* ACTIVE LINK */
+.active {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white !important;
+  font-weight: 500;
+}
+
+/* =========================
+   MAIN AREA
+========================= */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* prevents overflow issues */
+}
+
+/* TOPBAR */
+.topbar {
+  background: white;
+  padding: 15px 20px;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* CONTENT */
+.content {
+  padding: 25px;
+  overflow-y: auto;
+}

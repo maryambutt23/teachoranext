@@ -1,0 +1,124 @@
+.teachersPage {
+  padding: 30px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header p {
+  color: #cbd5e1;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* FILTER BOX */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 15px;
+  border-radius: 16px;
+
+  backdrop-filter: blur(12px);
+
+  margin-bottom: 25px;
+}
+
+/* INPUT */
+.input {
+  flex: 2;
+  min-width: 220px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* SELECT */
+.select {
+  flex: 1;
+  min-width: 160px;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.select option {
+  background: #111827;
+  color: white;
+}
+
+.select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD WRAPPER */
+.cardWrapper {
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 16px;
+}
+
+.cardWrapper:hover {
+  transform: translateY(-6px);
+}
+
+/* OPTIONAL CARD STYLE (if TeacherCard is not styled) */
+.teacherCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 16px;
+  padding: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  transition: 0.3s;
+}
+
+.teacherCard:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+}

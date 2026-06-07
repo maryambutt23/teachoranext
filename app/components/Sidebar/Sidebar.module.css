@@ -1,0 +1,208 @@
+/* =========================
+   SIDEBAR BASE
+========================= */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(180deg, #0f172a, #111827);
+
+  padding: 20px;
+
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.3s ease;
+}
+
+/* =========================
+   TOP
+========================= */
+
+.sidebarTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/* LOGO */
+.logo {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #3b82f6;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.sidebarLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebarLinks a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  color: #e2e8f0;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.sidebarLinks a svg {
+  font-size: 18px;
+}
+
+.sidebarLinks a:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: white;
+  transform: translateX(4px);
+}
+
+/* ACTIVE LINK */
+.active {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.active svg {
+  color: white !important;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logoutBtn {
+  margin-top: 20px;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #ef4444;
+  color: white;
+
+  font-weight: 600;
+
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menuBtn {
+  display: none;
+
+  position: fixed;
+  top: 15px;
+  left: 15px;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+  color: white;
+  font-size: 20px;
+
+  border: none;
+  cursor: pointer;
+
+  z-index: 1100;
+}
+
+/* CLOSE BUTTON */
+.closeBtn {
+  display: none;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  z-index: 999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .show {
+    transform: translateX(0);
+  }
+
+  .menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .closeBtn {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}
