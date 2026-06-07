@@ -1,17 +1,23 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthContext } from "../../context/AuthContext";
 import styles from "./AdminLogin.module.css";
 
 export default function Page() {
-  const { login } = useContext(AuthContext);
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  const auth = useContext(AuthContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -21,16 +27,22 @@ export default function Page() {
       return;
     }
 
-    const success = login(email, password);
+    if (!auth?.login) {
+      alert("Auth system not ready");
+      return;
+    }
+
+    const success = auth.login(email, password);
 
     if (success) {
-      // ✅ IMPORTANT FIX: go back to requested page
       const redirectTo = searchParams.get("from") || "/admin";
       router.replace(redirectTo);
     } else {
       alert("Invalid credentials");
     }
   };
+
+  if (!mounted) return null;
 
   return (
     <div className={styles.loginPage}>
