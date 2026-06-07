@@ -2,33 +2,39 @@
 
 import { createContext, useState, useEffect } from "react";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext();
 
-export default function AuthProvider({ children }) {
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem("adminUser");
-    if (stored) {
-      setUser(JSON.parse(stored));
-    }
+    if (typeof window === "undefined") return;
+
+    const saved = localStorage.getItem("adminUser");
+    if (saved) setUser(JSON.parse(saved));
   }, []);
 
   const login = (email, password) => {
     if (email === "admin@teachora.com" && password === "1234") {
-      const admin = { role: "admin", email };
+      const userData = { email, role: "admin" };
+      setUser(userData);
 
-      localStorage.setItem("adminUser", JSON.stringify(admin));
-      setUser(admin);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("adminUser", JSON.stringify(userData));
+      }
 
-      return admin;
+      return true;
     }
-    return null;
+
+    return false;
   };
 
   const logout = () => {
-    localStorage.removeItem("adminUser");
     setUser(null);
+
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("adminUser");
+    }
   };
 
   return (
